@@ -477,7 +477,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
         }
         return nil;
     }
-    
+    //创建一个新的 NSOperation 对象
     NSOperation *operation = [NSOperation new];
     void(^queryDiskBlock)(void) =  ^{
         if (operation.isCancelled) {
@@ -486,6 +486,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
         }
         
         @autoreleasepool {
+			//通过 key 查询 磁盘 data
             NSData *diskData = [self diskImageDataBySearchingAllPathsForKey:key];
             UIImage *diskImage;
             SDImageCacheType cacheType = SDImageCacheTypeDisk;

@@ -130,25 +130,29 @@
 
     BOOL isFailedUrl = NO;
     if (url) {
+		//在线程安全情况下检查是否已经缓存了此URL进行查询 如果有 就是 failedUrl
         @synchronized (self.failedURLs) {
             isFailedUrl = [self.failedURLs containsObject:url];
         }
     }
-
+//如果是失败的URL直接返回 failedUrl
     if (url.absoluteString.length == 0 || (!(options & SDWebImageRetryFailed) && isFailedUrl)) {
+//进行回调处理结果
         [self callCompletionBlockForOperation:operation completion:completedBlock error:[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorFileDoesNotExist userInfo:nil] url:url];
         return operation;
     }
-
+	//保证线程安全前提下添加 新的 operation  SDWebImageCombinedOperation
     @synchronized (self.runningOperations) {
         [self.runningOperations addObject:operation];
     }
     NSString *key = [self cacheKeyForURL:url];
-    
+    // 计算缓存选项   ==================
     SDImageCacheOptions cacheOptions = 0;
     if (options & SDWebImageQueryDataWhenInMemory) cacheOptions |= SDImageCacheQueryDataWhenInMemory;
     if (options & SDWebImageQueryDiskSync) cacheOptions |= SDImageCacheQueryDiskSync;
-    
+     // 计算缓存选项   ================== 最终得到 缓存选项参数 cacheOptions 参数值
+
+
     __weak SDWebImageCombinedOperation *weakOperation = operation;
     operation.cacheOperation = [self.imageCache queryCacheOperationForKey:key options:cacheOptions done:^(UIImage *cachedImage, NSData *cachedData, SDImageCacheType cacheType) {
         __strong __typeof(weakOperation) strongOperation = weakOperation;

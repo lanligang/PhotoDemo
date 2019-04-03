@@ -100,7 +100,7 @@
         _HTTPHeaders = [@{@"Accept": @"image/*;q=0.8"} mutableCopy];
 #endif
         _operationsLock = dispatch_semaphore_create(1);
-        _headersLock = dispatch_semaphore_create(1);
+        _headersLock =     dispatch_semaphore_create(1);
         _downloadTimeout = 15.0;
 
         [self createNewSessionWithConfiguration:sessionConfiguration];
