@@ -25,6 +25,11 @@
 		8F102DE6222E02CB000C2E8C /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F102DE5222E02CB000C2E8C /* UncaughtExceptionHandler.m */; };
 		8F102DE7222E02CB000C2E8C /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F102DE5222E02CB000C2E8C /* UncaughtExceptionHandler.m */; };
 		8F102DE8222E02CB000C2E8C /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F102DE5222E02CB000C2E8C /* UncaughtExceptionHandler.m */; };
+		8FA7E2FD225C9D8F00186B09 /* JPGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7E2F4225C9D8F00186B09 /* JPGModel.m */; };
+		8FA7E2FE225C9D8F00186B09 /* FilePathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7E2F9225C9D8F00186B09 /* FilePathManager.m */; };
+		8FA7E2FF225C9D8F00186B09 /* MovModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7E2FB225C9D8F00186B09 /* MovModel.m */; };
+		8FA7E300225C9D8F00186B09 /* LivePhotoMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7E2FC225C9D8F00186B09 /* LivePhotoMaker.m */; };
+		8FA7E304225CAEFB00186B09 /* VideoRecorderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7E303225CAEFB00186B09 /* VideoRecorderVC.m */; };
 		8FE3D759222915C600DC5DEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE3D758222915C600DC5DEB /* AppDelegate.m */; };
 		8FE3D75C222915C600DC5DEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE3D75B222915C600DC5DEB /* ViewController.m */; };
 		8FE3D75F222915C600DC5DEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE3D75D222915C600DC5DEB /* Main.storyboard */; };
@@ -100,6 +105,17 @@
 		8F102DD4222D0685000C2E8C /* YYSpriteSheetImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSpriteSheetImage.h; sourceTree = "<group>"; };
 		8F102DE4222E02CB000C2E8C /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		8F102DE5222E02CB000C2E8C /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		8FA7E2F4225C9D8F00186B09 /* JPGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPGModel.m; sourceTree = "<group>"; };
+		8FA7E2F5225C9D8F00186B09 /* FilePathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilePathManager.h; sourceTree = "<group>"; };
+		8FA7E2F6225C9D8F00186B09 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		8FA7E2F7225C9D8F00186B09 /* MovModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovModel.h; sourceTree = "<group>"; };
+		8FA7E2F8225C9D8F00186B09 /* LivePhotoMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePhotoMaker.h; sourceTree = "<group>"; };
+		8FA7E2F9225C9D8F00186B09 /* FilePathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilePathManager.m; sourceTree = "<group>"; };
+		8FA7E2FA225C9D8F00186B09 /* JPGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPGModel.h; sourceTree = "<group>"; };
+		8FA7E2FB225C9D8F00186B09 /* MovModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovModel.m; sourceTree = "<group>"; };
+		8FA7E2FC225C9D8F00186B09 /* LivePhotoMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePhotoMaker.m; sourceTree = "<group>"; };
+		8FA7E302225CAEFB00186B09 /* VideoRecorderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoRecorderVC.h; sourceTree = "<group>"; };
+		8FA7E303225CAEFB00186B09 /* VideoRecorderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoRecorderVC.m; sourceTree = "<group>"; };
 		8FE3D754222915C600DC5DEB /* PhotoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE3D757222915C600DC5DEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8FE3D758222915C600DC5DEB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -219,6 +235,32 @@
 			path = YYImage;
 			sourceTree = "<group>";
 		};
+		8FA7E2F3225C9D8F00186B09 /* FLLivePhotoMaker */ = {
+			isa = PBXGroup;
+			children = (
+				8FA7E2F8225C9D8F00186B09 /* LivePhotoMaker.h */,
+				8FA7E2FC225C9D8F00186B09 /* LivePhotoMaker.m */,
+				8FA7E2FA225C9D8F00186B09 /* JPGModel.h */,
+				8FA7E2F4225C9D8F00186B09 /* JPGModel.m */,
+				8FA7E2F5225C9D8F00186B09 /* FilePathManager.h */,
+				8FA7E2F9225C9D8F00186B09 /* FilePathManager.m */,
+				8FA7E2F7225C9D8F00186B09 /* MovModel.h */,
+				8FA7E2FB225C9D8F00186B09 /* MovModel.m */,
+				8FA7E2F6225C9D8F00186B09 /* Header.h */,
+			);
+			name = FLLivePhotoMaker;
+			path = "../../../创建实况图片/FLLivePhotoMaker";
+			sourceTree = "<group>";
+		};
+		8FA7E301225CAEBF00186B09 /* VideoRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				8FA7E302225CAEFB00186B09 /* VideoRecorderVC.h */,
+				8FA7E303225CAEFB00186B09 /* VideoRecorderVC.m */,
+			);
+			path = VideoRecorder;
+			sourceTree = "<group>";
+		};
 		8FE3D74B222915C600DC5DEB = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +296,8 @@
 				8FE3D78A222915FD00DC5DEB /* PhotoManager.m */,
 				8F102DE4222E02CB000C2E8C /* UncaughtExceptionHandler.h */,
 				8F102DE5222E02CB000C2E8C /* UncaughtExceptionHandler.m */,
+				8FA7E301225CAEBF00186B09 /* VideoRecorder */,
+				8FA7E2F3225C9D8F00186B09 /* FLLivePhotoMaker */,
 				8FF2BEE722530ECB00F81129 /* SDWebImage */,
 				8F102DCA222D0685000C2E8C /* YYImage */,
 				8FE3D75D222915C600DC5DEB /* Main.storyboard */,
@@ -489,16 +533,20 @@
 				8F102DE1222D0685000C2E8C /* YYAnimatedImageView.m in Sources */,
 				8FF2BF1D22530ECB00F81129 /* SDWebImageManager.m in Sources */,
 				8FF2BF2A22530ECB00F81129 /* SDAnimatedImageRep.m in Sources */,
+				8FA7E300225C9D8F00186B09 /* LivePhotoMaker.m in Sources */,
 				8FF2BF2E22530ECB00F81129 /* NSData+ImageContentType.m in Sources */,
 				8FF2BF2B22530ECB00F81129 /* SDImageCache.m in Sources */,
 				8F102DE6222E02CB000C2E8C /* UncaughtExceptionHandler.m in Sources */,
 				8FF2BF3422530ECB00F81129 /* UIView+WebCache.m in Sources */,
 				8FF2BF2822530ECB00F81129 /* SDWebImageCoder.m in Sources */,
+				8FA7E2FF225C9D8F00186B09 /* MovModel.m in Sources */,
 				8FF2BF3022530ECB00F81129 /* NSImage+WebCache.m in Sources */,
 				8FF2BF2F22530ECB00F81129 /* UIImageView+WebCache.m in Sources */,
 				8FF2BF3322530ECB00F81129 /* UIView+WebCacheOperation.m in Sources */,
 				8FE3D79522291F7B00DC5DEB /* PHCollectionViewController.m in Sources */,
+				8FA7E2FE225C9D8F00186B09 /* FilePathManager.m in Sources */,
 				8FF2BF2D22530ECB00F81129 /* SDWebImageTransition.m in Sources */,
+				8FA7E2FD225C9D8F00186B09 /* JPGModel.m in Sources */,
 				8FF2BF2222530ECB00F81129 /* SDWebImageDownloader.m in Sources */,
 				8FF2BF2622530ECB00F81129 /* SDWebImageCompat.m in Sources */,
 				8FE3D767222915D100DC5DEB /* main.m in Sources */,
@@ -512,6 +560,7 @@
 				8FF2BF3622530ECB00F81129 /* UIButton+WebCache.m in Sources */,
 				8FF2BF3122530ECB00F81129 /* SDWebImageGIFCoder.m in Sources */,
 				8FE3D78B222915FD00DC5DEB /* PhotoManager.m in Sources */,
+				8FA7E304225CAEFB00186B09 /* VideoRecorderVC.m in Sources */,
 				8FF2BF1E22530ECB00F81129 /* UIImageView+HighlightedWebCache.m in Sources */,
 				8FF2BF2322530ECB00F81129 /* UIImage+GIF.m in Sources */,
 				8FE3D759222915C600DC5DEB /* AppDelegate.m in Sources */,

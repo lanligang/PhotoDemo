@@ -13,6 +13,7 @@
 #import "SDWebImageGIFCoder.h"
 #import "UIImage+GIF.h"
 
+#import "Header.h"
 
 @interface PhotoBrowViewController ()<UIScrollViewDelegate>
 @property (nonatomic,strong)UIScrollView *bgScrollView;
@@ -69,6 +70,10 @@
 	self.activityIndicator.hidesWhenStopped = YES;
 	self.activityIndicator.center = self.view.center;
 	[self.activityIndicator startAnimating];
+
+	UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(share)];
+	self.navigationItem.rightBarButtonItem = item;
+
 	if (self.asset.mediaType == PHAssetMediaTypeImage) {
 		__weak typeof(self)ws = self;
 		if ([name hasSuffix:@".GIF"]) {
@@ -108,6 +113,7 @@
 			[ws.avPlayer play];
 			[ws.activityIndicator stopAnimating];
 		} failure:^(NSString *errorMessage, NSError *error) {
+			
 		}];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayDidEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
 		[self addTimeObserver];
@@ -125,6 +131,9 @@
 			//激活音频会话
 		[[AVAudioSession sharedInstance]setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionAllowBluetooth error:nil];
 		[[AVAudioSession sharedInstance]setActive:YES error:nil];
+		UIBarButtonItem *saveLiveItem = [[UIBarButtonItem alloc]initWithTitle:@"LivePhoto" style:(UIBarButtonItemStylePlain) target:self action:@selector(saveLivePhotoAction)];
+		UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(share)];
+		self.navigationItem.rightBarButtonItems =@[item,saveLiveItem];
 	}
 	[_bgScrollView setZoomScale:0.8 animated:NO];
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTap:)];
@@ -135,9 +144,21 @@
 	}else{
 		tap.numberOfTapsRequired = 2;
 	}
-	UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(share)];
-	self.navigationItem.rightBarButtonItem = item;
+
 	[self.view bringSubviewToFront:self.activityIndicator];
+}
+
+-(void)saveLivePhotoAction
+{
+//	if (self.sourceUrl) {
+//		[self creactAndSaveLivePhoto:self.sourceUrl];
+//	}
+	[self.avPlayer pause];
+	Class vcClass = NSClassFromString(@"VideoRecorderVC");
+	if (vcClass) {
+		UIViewController *vc = [[vcClass alloc]init];
+		[self.navigationController pushViewController:vc animated:YES];
+	}
 }
 
 -(void)share
@@ -279,5 +300,23 @@
 	[self removetimeObserVer];
 }
 
+-(void)creactAndSaveLivePhoto:(NSURL *)url
+{
+	if ([url isKindOfClass:[NSURL class]]) {
+		[LivePhotoMaker makeLivePhotoByLibrary:url completed:^(NSDictionary *resultDic) {
+			if (resultDic) {
+				NSURL * videoUrl = resultDic[@"MOVPath"];
+				NSURL * imageUrl = resultDic[@"JPGPath"];
+				if (videoUrl&&imageUrl) {
+					[LivePhotoMaker saveLivePhotoToAlbumWithMovPath:videoUrl ImagePath:imageUrl completed:^(BOOL isSuccess) {
+						if (isSuccess) {
+							NSLog(@"创建成功");
+						}
+					}];
+				}
+			}
+		}];
+	}
+}
 
 @end
